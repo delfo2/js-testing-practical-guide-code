@@ -1,1 +1,12 @@
 .DS_Store
+/code/basic-testing-frontend/node_modules
+/code/basic-testing-frontend/package-lock.json
+/code/basic-testing-frontend/package.json
+
+/code/basic-testing-nodejs/package-lock.json
+/code/basic-testing-nodejs/package-lock.json
+/code/basic-testing-nodejs/node_modules
+
+/code/basic-testing-nodejs-esmodules/node_modules
+/code/basic-testing-nodejs-esmodules/package.json
+/code/basic-testing-nodejs-esmodules/package.json
