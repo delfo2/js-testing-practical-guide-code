@@ -24,11 +24,21 @@ it('should yield NaN if a least one number is invalid', () => {
 });
 
 it('should be 0 if array is empty', () => {
-    
+    const arr = [];
+    const result = add(arr);
+    expect(result).toBe(0);
 });
 
-it('should throw a Error if array is empty', () => {
+it('should throw a Error if function is called without arguments', () => {
     const expectFn = () => {add()};
 
-    expect(expectFn).toThrowError();
+    expect(expectFn).toThrowError(/iterable/);
+})
+
+it('should throw a Error if proviced with multiple arguments instead of an array', () => {
+    const a = 1
+    const b = 2;
+    const expectFn = () => {add(a, b)};
+
+    expect(expectFn).toThrowError(/iterable/);
 })
