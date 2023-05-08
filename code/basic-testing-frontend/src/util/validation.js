@@ -1,3 +1,5 @@
+import { transformToNumber } from "./numbers.js";
+
 export function validateStringNotEmpty(value) {
   if(typeof value !== 'string') {
     throw new TypeError('Invalid Parameter: expect receive a string as value');
@@ -13,4 +15,11 @@ export function validateNumber(number) {
     throw new Error('Invalid number input.');
   }
   return true;
+}
+
+export function validateNumberAll (numberInput) {
+  validateStringNotEmpty(numberInput)
+  const number = transformToNumber(numberInput);
+  validateNumber(number)
+  return number;
 }
