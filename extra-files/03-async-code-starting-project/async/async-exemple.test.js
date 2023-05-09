@@ -1,5 +1,5 @@
 import { it, describe, expect} from 'vitest';
-import { generateToken } from './async-example';
+import { generateToken, generateTokenPromise } from './async-example';
 
 describe('generateToken()', () => {
     it('should generate a token ', (done) => {
@@ -16,3 +16,25 @@ describe('generateToken()', () => {
         })
     });
 });
+
+describe('generateTokenPromise()', () => {
+    it('should generate a token ', () => {
+        const email = 'test@test.com';
+        
+        expect(generateTokenPromise(email)).resolves.toBeDefined();
+    });
+    it('should generate a token with async/await', async () => {
+        const email = 'test@test.com';
+        
+        const token = await generateTokenPromise(email);
+
+        return expect(token).toBeDefined();
+    });
+    it('should throw an error if no arguments is proviced ', () => {
+        const tokenFN = async () => {
+            await generateTokenPromise();
+        } 
+
+        expect(tokenFN).rejects.toThrow();
+    });
+})

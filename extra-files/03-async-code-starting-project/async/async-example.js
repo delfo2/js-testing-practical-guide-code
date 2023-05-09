@@ -5,6 +5,9 @@ export function generateToken(userEmail, doneFn) {
 }
 
 export function generateTokenPromise(userEmail) {
+  if(!userEmail) {
+    throw new Error('The Function was called without a required argument');
+  }
   const promise = new Promise((resolve, reject) => {
     jwt.sign({ email: userEmail }, 'secret123', (error, token) => {
       if (error) {
