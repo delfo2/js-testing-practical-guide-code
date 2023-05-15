@@ -1,7 +1,7 @@
 import { it, expect } from 'vitest';
 import { validateNotEmpty } from './validation';
 
-it('should throw an error if the string provided is empty', () => {
+it('should throw an error if an empty string is provided', () => {
     const string = '';
     const errorMessage = 'The string shouldnt be empty';
     const testFn = () => {
