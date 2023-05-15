@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -c-1",
-    "test-w": "vitest --reporter verbose"
+    "test-w": "vitest --reporter verbose --environment happy-dom"
   },
   "keywords": [],
   "author": "",
